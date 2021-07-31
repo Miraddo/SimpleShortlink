@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"github.com/Miraddo/Shortlink/pkg/shorter"
+	"github.com/Miraddo/SimpleShortlink/pkg/shorter"
 	"net/http"
 )
 

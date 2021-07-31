@@ -1,4 +1,4 @@
-module github.com/Miraddo/Shortlink
+module github.com/Miraddo/SimpleShortlink
 
 go 1.16
 

@@ -3,9 +3,9 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"github.com/Miraddo/Shortlink/config"
-	"github.com/Miraddo/Shortlink/pkg/handlers"
-	"github.com/Miraddo/Shortlink/pkg/shorter"
+	"github.com/Miraddo/SimpleShortlink/config"
+	"github.com/Miraddo/SimpleShortlink/pkg/handlers"
+	"github.com/Miraddo/SimpleShortlink/pkg/shorter"
 	"net/http"
 
 	_ "github.com/lib/pq"
