@@ -9,8 +9,8 @@ func getEnv(key string, defaultValue string) string {
 	return defaultValue
 }
 
-var DatabaseHost = getEnv("Shorter_DB_HOST", "127.0.0.1")
-var DatabaseUser = getEnv("Shorter_DB_USR", "postgres")
-var DatabasePass = getEnv("Shorter_DB_PSS", "123456")
-var DatabaseName = getEnv("Shorter_DB_NM", "shortlink")
-var DatabaseSSLMode = getEnv("Shorter_DB_SSLMode", "disable")
+var DBHost = getEnv("Shorter_DB_HOST", "127.0.0.1")
+var DBUser = getEnv("Shorter_DB_USR", "postgres")
+var DBPass = getEnv("Shorter_DB_PSS", "123456")
+var DBName = getEnv("Shorter_DB_NM", "shortlink")
+var DBSSLMode = getEnv("Shorter_DB_SSLMode", "disable")
