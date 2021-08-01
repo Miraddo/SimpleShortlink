@@ -7,6 +7,7 @@ import (
 	"github.com/Miraddo/SimpleShortlink/pkg/handlers"
 	"github.com/Miraddo/SimpleShortlink/pkg/shorter"
 	"github.com/spf13/cobra"
+	"go.uber.org/zap"
 	"log"
 	"net/http"
 
@@ -48,9 +49,14 @@ var servCmd = &cobra.Command{
 		st := &shorter.ShorterFunc{
 			DB: data,
 		}
+		logger, err := zap.NewDevelopment()
+		if err != nil {
+			panic(err)
+		}
 
 		hf := &handlers.HTTPHandler{
 			Shorter: st,
+			Logger:  logger.Sugar(),
 		}
 
 		// create two handle requests

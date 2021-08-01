@@ -2,11 +2,13 @@ package handlers
 
 import (
 	"github.com/Miraddo/SimpleShortlink/pkg/shorter"
+	"go.uber.org/zap"
 	"net/http"
 )
 
 type HTTPHandler struct {
 	Shorter *shorter.ShorterFunc
+	Logger  *zap.SugaredLogger
 }
 
 func (hh *HTTPHandler) MainUrlFunc(writer http.ResponseWriter, request *http.Request) {
@@ -20,6 +22,7 @@ func (hh *HTTPHandler) MainUrlFunc(writer http.ResponseWriter, request *http.Req
 		if err != nil {
 			return
 		}
+		hh.Logger.Errorf("Key is not Correct!")
 		return
 	}
 
@@ -27,7 +30,8 @@ func (hh *HTTPHandler) MainUrlFunc(writer http.ResponseWriter, request *http.Req
 
 	_, err = writer.Write([]byte(rt))
 	if err != nil {
-		panic(err)
+		hh.Logger.Errorf("Could not disply string with Write method in writer!")
+		return
 	}
 	//http.go.Redirect(writer, request, rt, 301)
 	//log.Println(rt)
@@ -43,6 +47,7 @@ func (hh *HTTPHandler) ShortUrlFunc(writer http.ResponseWriter, request *http.Re
 		if err != nil {
 			return
 		}
+		hh.Logger.Errorf("Url is not Correct!")
 		return
 	}
 
@@ -51,6 +56,7 @@ func (hh *HTTPHandler) ShortUrlFunc(writer http.ResponseWriter, request *http.Re
 	_, err = writer.Write([]byte(rt))
 
 	if err != nil {
+		hh.Logger.Errorf("Could not disply string with Write method in writer!")
 		return
 	}
 }
