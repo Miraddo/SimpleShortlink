@@ -1,12 +1,12 @@
-#Simple Short Link
+# Simple Short Link
 
 a simple app to make links/urls shorter and return the short value to get the main url
 
 
-##Install and Configure DataBase with Docker
+## Install and Configure DataBase with Docker
 I used postgresql in this project.
 
-###steps
+### steps
 - Install Docker ^_^
 - run this command `docker pull postgres:latest` to download the last version of postgres
 - after that to have storage create volume `docker volume create pg-volume`
@@ -36,7 +36,7 @@ on urls (key);
 
 after all you should open/edit `config/config.go` file and set your database info correctly
 
-##How to use this app
+## How to use this app
 for use this app we had three command after build the code or run the code as like :
 ```bash
 # first 
